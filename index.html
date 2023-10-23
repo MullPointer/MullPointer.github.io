@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+Selecting document format
+</title>
+
+<style>
+body
+{
+    font-family: Frutiger W01,Arial,Sans-serif;
+    color: #212b32;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+}
+h1,h2
+{
+    font-size: 3rem;
+    display: block;
+    font-weight: 600;
+}
+button
+{
+    background-color: #007f3b;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 4px #00401e;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 0;
+    padding: 12px 16px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    margin-bottom: 24px;
+}
+</style>
+
+</head>
+ 
+<body>
+<p>
+Select a radio button and click on Show Selection.
+</p>
+<div ID="DocumentSelectionArea">
+<h2>
+Document Format Selection Area
+</h2>
+<div><input type="radio" name="DocumentFormat" id="LargePrint" value="Large Print, at least 28 point sans serif font,957371000000106"><label for="LargePrint">Large print, at least 28pt</label></div>
+<div><input type="radio" name="DocumentFormat" id="Makaton" value="Makaton,936641000000108"><label for="Makaton">Makaton</label></div>
+<div><input type="radio" name="DocumentFormat" id="BrailleGrade1" value="uncontracted (Grade 1) Braille,936681000000100"><label for="BrailleGrade1">Grade 1 Braille</label></div>
+<div><input type="radio" name="DocumentFormat" id="BrailleGrade2" value="Contracted (Grade 2) Braille,936661000000109"><label for="BrailleGrade2">Grade 2 Braille</label></div>
+<button type="button" onclick="displayRadioValue()">
+Show Selection (with SNOMED Codes).
+</button>
+<br>
+</div>
+<div id="result"></div>
+<script>
+function displayRadioValue()
+{
+var ele = document.getElementsByName('DocumentFormat');
+for (i = 0; i < ele.length; i++)
+{
+if (ele[i].checked)
+document.getElementById("result").innerHTML
+= "Document Format: " + ele[i].value;
+}
+}
+</script>
+</body>
+</html>
